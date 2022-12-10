@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: top; */
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+canvas {
+  border-bottom: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  column-gap: 100px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.controls img {
+  height: 4rem;
+}
+
+.controls #speed {
+  background-color: white;
+  border: none;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.controls .speed_container {
+  display: flex;
+  justify-content: left;
+  width: 300px;
+}
+
+.controls .reverse_container {
+  display: flex;
+  justify-content: right;
+  width: 300px;
+}
+
+.controls #reverse {
+  height: 2rem;
+  border-radius: 100%;
+  padding: 5px;
+}
+
+.controls .selected {
+  background-color: rgb(110, 110, 110);
+}
+
+.controls > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 75px;
+}
+
+.header {
+  display: flex;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+
+.header > div {
+  flex: 1;
+}
+
+.header .title {
+  display: flex;
+  flex-direction: column;
+}
+
+.header .options {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.header .options div {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.header .options #size_num {
+  width: 50%;
+  align-self: center;
+}
+
+/* header mobile */
+
+.header_mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 2rem;
+  /* height: 25vh; */
+  width: 100%;
+  border-bottom: 1px solid black;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header_mobile .title p {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.header_mobile .options {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-top: 1px solid black;
+  width: 100%;
+  column-gap: 200px;
+  padding: 50px;
+  box-sizing: border-box;
+  margin-top: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.header_mobile .options > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  font-size: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header_mobile .options select, .header_mobile .options input {
+  height: 75px;
+  font-size: 2rem;
+}
+
+.header_mobile .options input {
+  transform: scale(3);
+  width: 50%;
+}
+
+/* controls mobile */
+.controls_mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 100px;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.controls_mobile img {
+  height: 10rem;
+}
+
+.controls_mobile #speed {
+  background-color: white;
+  border: none;
+  font-size: 6rem;
+  text-align: left;
+}
+
+.controls_mobile .speed_container {
+  display: flex;
+  justify-content: left;
+  width: 300px;
+}
+
+.controls_mobile .reverse_container {
+  display:flex;
+  justify-content: right;
+  width: 300px;
+}
+
+.controls_mobile #reverse {
+  border-radius: 100%;
+  width: 100px;
+  padding: 20px;
+}
+
+.controls_mobile .selected {
+  background-color: rgb(110, 110, 110);
 }
