@@ -59,7 +59,7 @@ function App() {
     // canv.height = window.innerWidth < 1000 ? window.innerHeight / 2 : window.innerHeight / 1.5
 
     // // colors.current = getColors(startArray)
-    // currentStep.current = 0
+    currentStep.current = 0
     await new Promise(r => setTimeout(r, 100))
     graphArray(startArray)
   }
