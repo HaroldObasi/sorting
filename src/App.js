@@ -12,7 +12,6 @@ function App() {
   const [mobile, setMobile] = useState(window.innerWidth < 1000)
 
   const [startArray, setStartArray] = useState(randomArray(200));
-  const startArrayRef = useRef(startArray);
   const colors = useRef([])
 
   const [arraySize, setArraySize] = useState(200)
@@ -52,15 +51,16 @@ function App() {
     }
   }, [startArray])
 
-  const updateMobile = e => {
+  const updateMobile = async e => {
     setMobile(window.innerWidth < 1000)
 
-    const canv = document.getElementById("canvas")
-    canv.width = window.innerWidth 
-    canv.height = mobile ? window.innerHeight / 2 : window.innerHeight / 1.5
+    // const canv = document.getElementById("canvas")
+    // canv.width = window.innerWidth 
+    // canv.height = window.innerWidth < 1000 ? window.innerHeight / 2 : window.innerHeight / 1.5
 
-    // colors.current = getColors(startArray)
-    currentStep.current = 0
+    // // colors.current = getColors(startArray)
+    // currentStep.current = 0
+    await new Promise(r => setTimeout(r, 100))
     graphArray(startArray)
   }
 
