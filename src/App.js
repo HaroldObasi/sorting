@@ -12,6 +12,7 @@ function App() {
   const [mobile, setMobile] = useState(window.innerWidth < 1000)
 
   const [startArray, setStartArray] = useState(randomArray(200));
+  const startArrayRef = useRef(startArray);
   const colors = useRef([])
 
   const [arraySize, setArraySize] = useState(200)
@@ -34,7 +35,7 @@ function App() {
   }, [arraySize])
 
   useEffect(() => {
-    colors.current = getColors(startArray)
+    // colors.current = getColors(startArray)
     graphArray(startArray)
   }, [startArray])
 
@@ -45,11 +46,21 @@ function App() {
 
   useEffect(() => {
     window.addEventListener('resize', updateMobile)
-  }, [])
+
+    return () => {
+      window.removeEventListener('resize', updateMobile)
+    }
+  }, [startArray])
 
   const updateMobile = e => {
     setMobile(window.innerWidth < 1000)
-    colors.current = getColors(startArray)
+
+    const canv = document.getElementById("canvas")
+    canv.width = window.innerWidth 
+    canv.height = mobile ? window.innerHeight / 2 : window.innerHeight / 1.5
+
+    // colors.current = getColors(startArray)
+    currentStep.current = 0
     graphArray(startArray)
   }
 
@@ -70,6 +81,7 @@ function App() {
   const graphArray = (arr) => {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext('2d')
+    colors.current = getColors(startArray)
 
     let max = canvas.width * .75;
 
