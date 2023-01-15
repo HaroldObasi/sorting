@@ -1,6 +1,6 @@
-import { useGlobalContext } from "./Context/context";
+import { useGlobalContext } from "../../Context/context";
 
-function Header(props) {
+function SortingVisualizerHeader(props) {
   const { arraySize, setArraySize, algo, setAlgo, playButton, mobile } =
     useGlobalContext();
   return (
@@ -56,4 +56,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default SortingVisualizerHeader;
