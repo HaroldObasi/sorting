@@ -1,0 +1,11 @@
+/* .grid {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.node {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  outline: solid 1px grey;
+}
