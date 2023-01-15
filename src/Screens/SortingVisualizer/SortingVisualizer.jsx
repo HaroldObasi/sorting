@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
-import Header from "../Header";
-import { useGlobalContext } from "../Context/context";
+import SortingVisualizerHeader from "./SortingVisualizerHeader";
+import { useGlobalContext } from "../../Context/context";
 
-import play_button from "../images/play.png";
-import pause_button from "../images/pause.png";
-import reverse_button from "../images/reverse.png";
+import play_button from "../../images/play.png";
+import pause_button from "../../images/pause.png";
+import reverse_button from "../../images/reverse.png";
 
-const Home = () => {
+const SortingVisualizer = () => {
   const { arraySize, algo, playButton, setPlayButton } = useGlobalContext();
   const [mobile, setMobile] = useState(window.innerWidth < 1000);
 
@@ -128,14 +128,7 @@ const Home = () => {
 
   return (
     <div className="main">
-      {/* <Header
-        isMobile={mobile}
-        isPlaying={!playButton}
-        // size={arraySize}
-        // setSize={setArraySize}
-        // algo={algo}
-        // setAlgo={setAlgo}
-      /> */}
+      <SortingVisualizerHeader />
 
       <canvas
         id="canvas"
@@ -401,4 +394,4 @@ const randomArray = (len) => {
   return tmp;
 };
 
-export default Home;
+export default SortingVisualizer;
